@@ -1,0 +1,9 @@
+Paleta de Cores:
+
+--bg-color: #0e0e0e; ou #0D0D0D;
+--txt-color: #fffeff; ou #F2F2F2;
+--primary-color: #0788D9;
+--secondary-color: #0669BF;
+
+
+

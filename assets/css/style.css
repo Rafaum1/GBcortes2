@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --bg-color: #0e0e0e;
+    --txt-color: #fffeff;
+    --primary-color: #0788D9;
+    --secondary-color: #0669BF;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 1.2rem;
+    border-radius: 1rem;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical{
+    background-image: linear-gradient(to top, #0788D9, #0788D9);
+    border-radius: 1rem;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin: 0 auto;
+
+    margin-top: 2rem;
+}
+
+.menu h1, .menu .destaque{
+    font-size: 3rem;
+}
+
+.destaque{
+    color: var(--primary-color);
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.menu ul li, .menu ul li a{
+    font-size: 2.2rem;
+    list-style: none;
+    text-decoration: none;
+    color: #fffeffb1;
+}
+
+.menu ul li a{
+    position: relative;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+.menu ul li a:before{
+    content: "";
+    width: 0px;
+    height: 3px;
+    background: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: .2s;
+}
+
+.menu ul li:hover a:before{
+    width: 100%;
+}
+
+.menu ul li:hover a{
+    color: var(--txt-color);
+}
+
+.menu button{
+    padding: 1rem 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-color);
+    border-radius: 4rem;
+    border: none;
+
+    cursor: pointer;
+    transition: .1s;
+}
+
+.menu button:hover{
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 1rem var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.menu button a{
+    color: var(--txt-color);
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.menu + main{
+    height: 100vh;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8rem;
+}
+
+main{
+    padding: 16rem 0 16rem;
+}
+
+main img{
+    width: 45rem;
+    height: 45rem;
+    border-radius: 50%;
+    border: 2px solid #0788D9;
+}
+
+main .conteudo-main{
+    width: 70rem;
+}
+
+main h2{
+    font-size: 3.5rem;
+    letter-spacing: 0.3rem;
+    margin: 0 0 2rem;
+}
+
+main .destaque{
+    font-size: 3.5rem;
+}
+
+main p{
+    font-size: 2.5rem;
+    text-align: justify;
+}
+
+#sobre{
+    height: 100vh;
+}
+
+#sobre #poste-de-barbeiro{
+    border: none;
+    width: 12rem;
+    height: 14rem;
+
+    animation: flutuar 2s infinite ease-in-out;
+}
+
+#sobre .conteudo-sobre{
+    width: 70rem;
+}
+
+#sobre .conteudo-sobre h1, #sobre .conteudo-sobre h1 .destaque{
+    font-size: 3.5rem;
+    text-align: right;
+    
+    margin-bottom: 2rem;
+}
+
+#sobre .conteudo-sobre p{
+    font-size: 2.5rem;
+    text-align: end;
+}
+
+#sobre img{
+    border-right: 4px solid #0788D9;
+    border-bottom: 4px solid #0788D9;
+}
+
+#precos{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.txt-posi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo{
+    font-size: 6rem;
+    text-transform: uppercase;
+
+    padding-bottom: 6rem;
+}
+
+#precos .bg-precos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+    padding: 2rem;
+    justify-items: center;
+}
+
+.card {
+    position: relative;
+    width: 30rem;
+    height: 25.4rem;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-20px) scale(1.05);
+}
+
+.card:hover::after{
+    filter: blur(10px);
+}
+
+.card::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #0788D9, #0669BF);
+    border-radius: 1.2em;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0788D9, #0669BF);
+    transition: .3s;
+}
+
+.card span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    border-radius: 1em;
+}
+
+
+
+.card .card-content {
+    position: relative;
+    padding: 10px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-content h2{
+    position: absolute;
+    margin-bottom: 18rem;
+
+    font-size: 2.3rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.card .card-content img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.card .card-content p{
+    position: absolute;
+    margin-top: 18rem;
+
+    letter-spacing: .3rem;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+
+
+/* ANIMAÇÕES */
+@keyframes flutuar {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 20px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+/* MEDIA QUERIS */
+@media screen and (max-width: 820px) {
+    body{
+        width: 100%;
+        display: grid;
+        place-content: center;
+    }
+
+    .flex-mobile{
+        flex-direction: column;
+    }
+
+    .flex-inverse{
+        flex-direction: column-reverse;
+    }
+
+    .menu ul, .menu button{
+        display: none;
+    }
+
+    .menu h1, .menu .destaque {
+        font-size: 2.5rem;
+    }
+
+    main {
+        height: auto;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    main img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    main .conteudo-main {
+        max-width: 60rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main h2 .destaque{
+        font-size: 2.5rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+        width: 60%;
+    }
+
+    main p{
+        font-size: 1.6rem;
+        text-align: justify;
+        width: 60%;
+    }
+
+    #sobre {
+        width: 100%;
+        height: auto;
+    }
+
+    #sobre .conteudo-sobre {
+        width: 100%;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sobre .conteudo-sobre h1,
+    #sobre .conteudo-sobre h1 .destaque {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #sobre img{
+        width: 30rem;
+        height: 35rem;
+
+        border: none;
+    }
+
+    #sobre .conteudo-sobre p {
+        font-size: 1.6rem; /* Ajusta o tamanho do texto */
+        text-align: justify; /* Alinha o texto justificado */
+        width: 60%;
+    }
+
+    #precos {
+        width: 100%; /* Ocupa toda a largura disponível */
+        padding: 3rem 0; /* Adiciona um espaçamento interno */
+        text-align: center; /* Centraliza o conteúdo horizontalmente */
+    }
+
+    #precos .bg-precos {
+        display: flex;
+        flex-direction: column; /* Altera para layout de coluna única */
+        align-items: center; /* Centraliza os itens horizontalmente */
+    }
+
+    .card {
+        width: 100%; /* Ocupa toda a largura disponível */
+        max-width: 50%; /* Limita a largura máxima */
+        margin-bottom: 2rem; /* Espaçamento entre os cards */
+    }
+
+    .card .card-content {
+        text-align: center; /* Centraliza o conteúdo do card */
+    }
+
+    .card .card-content h2 {
+        font-size: 1.8rem; /* Ajusta o tamanho do texto */
+        margin-bottom: 15rem; /* Espaçamento inferior menor */
+    }
+
+    .card .card-content img {
+        width: 8rem; /* Ajusta o tamanho da imagem */
+        height: 8rem;
+    }
+
+    .card .card-content p {
+        font-size: 1.6rem; /* Ajusta o tamanho do texto */
+        margin-top: 15rem; /* Espaçamento superior menor */
+    }
+}
